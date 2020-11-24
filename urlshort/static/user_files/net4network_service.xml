@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Class version="2020" origin="content" is-factory="true" class-name="network_service" display-name="Network Service" description="A generic class to represent all kinds of cloud network service.">
+            <Class-Qualifiers>
+                <Class-Qualifier version="2020" origin="content" is-factory="true" name="ABSTRACT_CLASS"/>
+                <Class-Qualifier version="2020" origin="content" is-factory="true" name="BDM_SCOPE"/>
+                <Class-Qualifier version="2020" origin="content" is-factory="true" name="RANDOM_GENERATED_ID_CLASS"/>
+                <Class-Qualifier version="2020" origin="content" is-factory="true" name="SERVICE_MODEL"/>
+            </Class-Qualifiers>
+            <Class-Type>OBJECT</Class-Type>
+            <Derived-From class-name="cloud_service"/>
+            <Attributes/>
+            <Attribute-Overrides/>
+            <Methods/>
+        </Class>

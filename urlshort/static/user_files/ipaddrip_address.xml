@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Class description="This class represents the logical network identifier of a node on the network. An IP Address can represent either an IPv4 or an IPv6 address." display-name="IpAddress" class-name="ip_address" is-factory="true" origin="content" version="2019">
+    <Class-Qualifiers>
+        <Class-Qualifier name="BDM_SCOPE" is-factory="true" origin="content" version="2019"/>
+        <Class-Qualifier name="RANDOM_GENERATED_ID_CLASS" is-factory="true" origin="content" version="2019"/>
+    </Class-Qualifiers>
+    <Class-Type>OBJECT</Class-Type>
+    <Derived-From class-name="network_entity"/>
+    <Attributes>
+        <Attribute is-factory="true" origin="content" version="2019" type="string" name="BODY_ICON">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="HIDDEN_ATTRIBUTE" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="STATIC_ATTRIBUTE" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+            <Default-Value>ip</Default-Value>
+        </Attribute>
+        <Attribute size="50" is-factory="true" origin="content" version="2019" description="MAC Address retrieved from switch/router ARP Cache information" display-name="ArpMac" type="string" name="arp_mac">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="HIDDEN_ATTRIBUTE" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+        </Attribute>
+        <Attribute size="100" is-factory="true" origin="content" version="2019" description="This is the authoritative DNS name for an IP address. This name will distinguish it from the aliases assigned to the IP address." display-name="AuthoritativeDnsName" type="string" name="authoritative_dns_name">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="ASSET" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="BDM_SCOPE" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="STATIC" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+        </Attribute>
+        <Attribute is-factory="false" display-name="EPAM IP Range Type" type="epam_sys_ip_range_type" name="epam_ip_range_type">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="CMS_EDITABLE_ATTRIBUTE" is-factory="false"/>
+                <Attribute-Qualifier name="CMS_PROPERTIES_ATTRIBUTE" is-factory="false">
+                    <Data-Items>
+                        <Data-Item type="boolean" name="PREVIEW_MODE_VISIBLE" is-factory="false">true</Data-Item>
+                        <Data-Item type="integer" name="PROPERTIES_GROUP_NUMBER" is-factory="false">0</Data-Item>
+                    </Data-Items>
+                </Attribute-Qualifier>
+                <Attribute-Qualifier name="CMS_SEARCHABLE_ATTRIBUTE" is-factory="false"/>
+            </Attribute-Qualifiers>
+            <Empty-Default-Value/>
+        </Attribute>
+        <Attribute size="50" is-factory="true" origin="content" version="2019" description="The ip address" display-name="IP Address" type="string" name="ip_address">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="ASSET" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="CALCULATED_ATTRIBUTE" is-factory="true" origin="content" version="2019">
+                    <Data-Items>
+                        <Data-Item type="string" name="FUNCTION" is-factory="true" origin="content" version="2019">name</Data-Item>
+                    </Data-Items>
+                </Attribute-Qualifier>
+                <Attribute-Qualifier name="DEPRECATION" is-factory="true" origin="content" version="2019">
+                    <Data-Items>
+                        <Data-Item type="string" name="DEPRECATION" is-factory="true" origin="content" version="2019">IpAddressValue and Name are the attributes used to represent the value of the IP Address</Data-Item>
+                    </Data-Items>
+                </Attribute-Qualifier>
+                <Attribute-Qualifier name="HIDDEN_ATTRIBUTE" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="INDEX" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+        </Attribute>
+        <Attribute is-factory="true" origin="content" version="2019" description="Specifies the properties of an IP Address, as known by NNMi. Currently, the IP Address Properties supports the notion of loopback addresses (virtual interfaces on a device for communication purposes) and anycast (loopback addresses used for routers in multi-cast network configurations)." display-name="IpAddressProperty" type="ip_address_property_enum" name="ip_address_property">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="BDM_SCOPE" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="STATIC" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+        </Attribute>
+        <Attribute is-factory="true" origin="content" version="2019" description="The type of the IP Address (e.g. IPv4, IPv6)" display-name="IpAddressType" type="ip_address_type_enum" name="ip_address_type">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="BDM_SCOPE" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="IP_ADDRESS_TYPE" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+            <Default-Value>IPv4</Default-Value>
+        </Attribute>
+        <Attribute size="50" is-factory="true" origin="content" version="2019" description="This represents the value of an IPv4 or IPv6 address.  Both IPv6 and IPv4 address values are kept in an IPv6 address format.  IPv4 addresses are mapped to IPv6 address format as as per the guidelines in http://www.ietf.org/rfc/rfc4291.txt.  Examples: * ABCD:EF01:2345:6789:ABCD:EF01:2345:6789 *Note: The Ipv6 addresses are fully specified, simplification rules (like omitting leading zeros or dropping parts of the address by using '::' will not be applied). " display-name="IpAddressValue" type="string" name="ip_address_value">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="BDM_SCOPE" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="IP_ADDRESS_LONG_FORMAT" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+        </Attribute>
+        <Attribute size="25" is-factory="true" origin="content" version="2019" description="The dhcp domain this ip belong (if isdhcp = true)" display-name="IP DHCP Domain Name" type="string" name="ip_dhcpdomainname">
+            <Attribute-Qualifiers/>
+        </Attribute>
+        <Attribute is-factory="true" origin="content" version="2019" description="Indication whether this IP represents a broadcast address" display-name="IP Is Broadcast" type="boolean" name="ip_isbroadcast">
+            <Attribute-Qualifiers/>
+        </Attribute>
+        <Attribute is-factory="true" origin="content" version="2019" description="Indication if got the ip  address automaticlly  by dhcp" display-name="IP Is DHCP" type="boolean" name="ip_isdhcp">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="DEPRECATION" is-factory="true" origin="content" version="2019">
+                    <Data-Items>
+                        <Data-Item type="string" name="DEPRECATION" is-factory="true" origin="content" version="2019">This info is reported on the ip_address_property new attribute instead.</Data-Item>
+                    </Data-Items>
+                </Attribute-Qualifier>
+                <Attribute-Qualifier name="HIDDEN_ATTRIBUTE" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+        </Attribute>
+        <Attribute is-factory="true" origin="content" version="2019" description="Is Managed By Auto Discovery?" display-name="Is Managed" type="boolean" name="ip_ismanaged">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="DEPRECATION" is-factory="true" origin="content" version="2019">
+                    <Data-Items>
+                        <Data-Item type="string" name="DEPRECATION" is-factory="true" origin="content" version="2019">This attribute is deprecated and is no longer in use.</Data-Item>
+                    </Data-Items>
+                </Attribute-Qualifier>
+                <Attribute-Qualifier name="HIDDEN_ATTRIBUTE" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+            <Default-Value>true</Default-Value>
+        </Attribute>
+        <Attribute is-factory="true" origin="content" version="2019" description="The lease time of IP address" display-name="IP Lease Time" type="ip_lease_type_enum" name="ip_lease_time">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="ASSET" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+            <Default-Value>0</Default-Value>
+        </Attribute>
+        <Attribute size="50" is-factory="true" origin="content" version="2019" description="The address of the network this ip is a member in" display-name="IP Network Address" type="string" name="ip_netaddr">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="ASSET" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+        </Attribute>
+        <Attribute size="10" is-factory="true" origin="content" version="2019" description="The class of the network this ip is a member in" display-name="IP Network Class" type="string" name="ip_netclass">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="STATIC" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+        </Attribute>
+        <Attribute size="50" is-factory="true" origin="content" version="2019" description="The mask of the network this ip is a member in" display-name="IP Network Mask" type="string" name="ip_netmask">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="COMPARABLE" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="STATIC" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+        </Attribute>
+        <Attribute is-factory="true" origin="content" version="2019" description="The type of the network this ip is a member in " display-name="IP Network Type" type="integer" name="ip_nettype">
+            <Attribute-Qualifiers/>
+        </Attribute>
+        <Attribute size="50" is-factory="true" origin="content" version="2019" description="The Name of the Probe which created the IP object" display-name="IP Probe Name" type="string" name="ip_probename">
+            <Attribute-Qualifiers/>
+        </Attribute>
+        <Attribute is-factory="true" origin="content" version="2019" type="string_list" name="matching_rules">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="HIDDEN_ATTRIBUTE" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="READ_ONLY_ATTRIBUTE" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="STATIC_ATTRIBUTE" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+            <List-Default-Value>&lt;Values&gt;&lt;Value&gt;ip_netmask&lt;/Value&gt;&lt;/Values&gt;</List-Default-Value>
+        </Attribute>
+        <Attribute size="50" is-factory="true" origin="content" version="2019" description="This is a continuous region of an IP network within which routing is possible without any intervening Network Address Translation (NAT) devices.The literal &quot;$DefaultDomain&quot; should be used if the routing domain is unknown, unspecified, or known to be the default domain. UcmdbRoutingDomain should not be confused with &quot;routing domain&quot; definition given in IETF RFC 1237" display-name="UcmdbRoutingDomain" type="string" name="routing_domain">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="ASSET" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="BDM_SCOPE" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="COMPARABLE" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="INDEX" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="REPLACE_VALUE_WITH_VALUE_FROM_SYSTEM_PROPERTY" is-factory="true" origin="content" version="2019">
+                    <Data-Items>
+                        <Data-Item type="string" name="CONSTANT_TO_REPLACE" is-factory="true" origin="content" version="2019">${DefaultDomain}</Data-Item>
+                        <Data-Item type="string" name="SYSTEM_PROPERTY_NAME" is-factory="true" origin="content" version="2019">default.domain</Data-Item>
+                    </Data-Items>
+                </Attribute-Qualifier>
+                <Attribute-Qualifier name="STATIC" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+            <Default-Value>${DefaultDomain}</Default-Value>
+        </Attribute>
+		<Attribute name="ip_role" type="string" display-name="IP Role" description="Special role for ip address. Example: AWS elastic ip" version="2020" origin="content" is-factory="true">
+            <Attribute-Qualifiers/>
+        </Attribute>
+    </Attributes>
+    <Attribute-Overrides>
+        <Attribute-Override is-partially-override="true" name="display_label" is-factory="true" origin="content" version="2019">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="CALCULATED_ATTRIBUTE" is-factory="true" origin="content" version="2019">
+                    <Data-Items>
+                        <Data-Item type="string" name="FUNCTION" is-factory="true" origin="content" version="2019">name|authoritative_dns_name</Data-Item>
+                        <Data-Item type="string" name="PREFIX" is-factory="true" origin="content" version="2019">user_label</Data-Item>
+                    </Data-Items>
+                </Attribute-Qualifier>
+            </Attribute-Qualifiers>
+        </Attribute-Override>
+        <Attribute-Override name="name" is-factory="true" origin="content" version="2019">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="IP_ADDRESS_SHORT_FORMAT" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+        </Attribute-Override>
+        <Attribute-Override name="name" is-factory="true" origin="content" version="2019">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="IP_ADDRESS_SHORT_FORMAT" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+        </Attribute-Override>
+        <Attribute-Override name="root_container" is-factory="true" origin="content" version="2019">
+            <Attribute-Qualifiers>
+                <Attribute-Qualifier name="HIDDEN_ATTRIBUTE" is-factory="true" origin="content" version="2019"/>
+                <Attribute-Qualifier name="INDEX" is-factory="true" origin="content" version="2019"/>
+            </Attribute-Qualifiers>
+        </Attribute-Override>
+    </Attribute-Overrides>
+    <Methods>
+        <Method description="Ping an ip" display-name="ip_ping" method-type="Execute" name="ip_ping" is-factory="true" origin="content" version="2019">
+            <Command>mping.bat %1</Command>
+            <Params>
+                <Attribute-Param name="ip_address"/>
+            </Params>
+        </Method>
+    </Methods>
+</Class>
